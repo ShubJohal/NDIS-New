@@ -12,6 +12,11 @@ app.use(bodyParser.json());
 // Serve static files (HTML, CSS, JS, etc.)
 app.use(express.static(__dirname));
 
+// Route to serve the footer
+app.get('/footer', (req, res) => {
+    res.sendFile(path.join(__dirname, 'footer.html'));
+});
+
 // Contact Us form submission
 app.post('/send', (req, res) => {
     const { name, email, subject, message } = req.body;
@@ -60,7 +65,7 @@ app.post('/submit-referral', (req, res) => {
     doc.pipe(writeStream);
 
     // Add logo to the header
-    doc.image('images\smalllogo.jpg', 50, 45, { width: 100 })
+    doc.image('images/smalllogo.jpg', 50, 45, { width: 100 })
         .fontSize(20)
         .text('For You For Life', 160, 50)
         .fontSize(10)
@@ -69,7 +74,7 @@ app.post('/submit-referral', (req, res) => {
 
     // Add pagination
     doc.on('pageAdded', () => {
-        doc.image('images\smalllogo.jpg', 50, 45, { width: 100 });
+        doc.image('images/smalllogo.jpg', 50, 45, { width: 100 });
         doc.fontSize(10).text(`Page ${doc.bufferedPageRange().count}`, 0, 10, { align: 'right' });
     });
 

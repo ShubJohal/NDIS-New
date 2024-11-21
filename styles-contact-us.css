@@ -21,7 +21,7 @@ body {
 }
 
 .hero-section-contact {
-    background: url('D:/NDIS Web/images/contact_us_background.jpg') no-repeat center center;
+    background: url('images/contact_us_background.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
     color: #fff;

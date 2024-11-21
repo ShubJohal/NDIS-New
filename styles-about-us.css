@@ -21,7 +21,7 @@ body {
 }
 
 .hero-section-about {
-    background: url('D:/NDIS Web/images/hero-bg.jpg') no-repeat center center;
+    background: url('images/hero-bg.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
     color: #fff;
